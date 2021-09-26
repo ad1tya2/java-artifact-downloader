@@ -1,27 +1,37 @@
 {
-  "name": "java-artifact-downloader",
+  "name": "java_artifact_downloader",
   "version": "1.0.0",
   "main": "main.js",
   "private": true,
   "author": "ad1tya2",
+  "productName": "JAD",
   "description": "A program for building and downloading artifacts from github repositories directly using jitpack",
   "scripts": {
-    "start": "vue-cli-service build && electron .",
+    "start": "electron-forge start",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
   },
   "dependencies": {
     "axios": "^0.21.4",
     "core-js": "^3.6.5",
+    "electron-squirrel-startup": "^1.0.0",
     "vue": "^2.6.11"
   },
   "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.61",
+    "@electron-forge/maker-deb": "^6.0.0-beta.61",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.61",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.61",
+    "@electron-forge/maker-zip": "^6.0.0-beta.61",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "babel-eslint": "^10.1.0",
-    "electron-builder": "^22.11.7",
+    "electron": "^15.0.0",
+    "electron-winstaller": "^5.0.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
     "vue-template-compiler": "^2.6.11"
@@ -44,5 +54,24 @@
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "config": {
+    "forge": {
+      "asar": true,
+      "packagerConfig": {
+        "asar": true
+      },
+      "makers": [
+        {
+          "name": "@electron-forge/maker-zip",
+          "config": {
+            "name": "JAD"
+          },
+          "platforms": [
+            "win32"
+          ]
+        }
+      ]
+    }
+  }
 }
