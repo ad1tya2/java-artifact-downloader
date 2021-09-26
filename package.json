@@ -1,10 +1,12 @@
 {
   "name": "java-artifact-downloader",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "main": "main.js",
   "private": true,
+  "author": "ad1tya2",
+  "description": "A program for building and downloading artifacts from github repositories directly using jitpack",
   "scripts": {
-    "start" : "vue-cli-service build && electron .",
+    "start": "vue-cli-service build && electron .",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
@@ -12,7 +14,6 @@
   "dependencies": {
     "axios": "^0.21.4",
     "core-js": "^3.6.5",
-    "electron": "^15.0.0",
     "vue": "^2.6.11"
   },
   "devDependencies": {
@@ -20,6 +21,7 @@
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "babel-eslint": "^10.1.0",
+    "electron-builder": "^22.11.7",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
     "vue-template-compiler": "^2.6.11"
